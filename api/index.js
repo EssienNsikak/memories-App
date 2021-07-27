@@ -4,6 +4,8 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
 
+import postRoutes from './routes/postRoutes.js';
+
 const app = express();
 
 dotenv.config();
@@ -11,6 +13,8 @@ dotenv.config();
 app.use(bodyParser.json({ limit: '30mb', extended: true }))
 app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }))
 app.use(cors());
+
+app.use('/posts', postRoutes);
 
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
