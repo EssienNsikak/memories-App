@@ -5,7 +5,8 @@ import {
   getPost, 
   createPost, 
   updatePost, 
-  likePost, 
+  likePost,
+  dislikePost, 
   deletePost 
 } from '../controllers/postController.js';
 
@@ -17,5 +18,6 @@ router.get('/:id', getPost);
 router.patch('/:id', updatePost);
 router.delete('/:id', deletePost);
 router.patch('/:id/likePost', likePost);
+router.patch('/:id/dislikePost', dislikePost);
 
 export default router;

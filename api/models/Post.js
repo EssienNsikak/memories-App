@@ -15,7 +15,9 @@ const PostSchema = mongoose.Schema(
       type: String
     },
 
-    tags: [String],
+    tags: {
+      type: Array
+    },
 
     selectedFile: {
       type: String
