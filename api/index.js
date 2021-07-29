@@ -16,6 +16,10 @@ app.use(cors());
 
 app.use('/posts', postRoutes);
 
+app.get('/', (req, res) => {
+  res.send('Hello, welcome to memories API')
+});
+
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Credentials', 'true');
@@ -42,7 +46,7 @@ mongoose
 
 app.use(express.json());
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 5002;
 
 app.listen(PORT, () => {
   console.log(`Backend server is running on PORT ${PORT}`);
