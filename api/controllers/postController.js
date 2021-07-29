@@ -83,7 +83,7 @@ export const dislikePost = async (req, res) => {
 
   const post = await Post.findById(id);
 
-  const updatedPost = await Post.findByIdAndUpdate(id, { likeCount: post.likeCount - 1 }, { new: true });
+  const updatedPost = await Post.findByIdAndUpdate(id, { dislikeCount: post.likeCount - 1 }, { new: true });
 
   res.json(updatedPost);
 };

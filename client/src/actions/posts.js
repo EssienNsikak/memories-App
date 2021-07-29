@@ -42,6 +42,7 @@ export const likePost = (id) => async (dispatch) => {
   }
 };
 
+
 export const deletePost = (id) => async (dispatch) => {
   try {
     await api.deletePost(id);
