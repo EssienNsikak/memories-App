@@ -11,6 +11,10 @@ const PostSchema = mongoose.Schema(
       type: String
     },
 
+    name: {
+      type: String
+    },
+
     creator: {
       type: String
     },
@@ -23,9 +27,9 @@ const PostSchema = mongoose.Schema(
       type: String
     },
 
-    likeCount: {
-      type: Number,
-      default: 0,
+    likes: { 
+      type: [String], 
+      default: [] 
     },
 
     createdAt: {
