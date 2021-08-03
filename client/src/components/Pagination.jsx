@@ -34,3 +34,4 @@ const Paginate = ({ page }) => {
 };
 
 export default Paginate;
+ 
