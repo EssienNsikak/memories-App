@@ -4,8 +4,7 @@ import {
   FETCH_ALL, 
   FETCH_POST, 
   FETCH_BY_SEARCH, 
-  CREATE, 
-  UPDATE, 
+  CREATE, UPDATE, 
   DELETE, 
   LIKE 
 } from '../constants/actionTypes';
