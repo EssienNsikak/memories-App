@@ -19,7 +19,7 @@ export const getPosts = async (req, res) => {
   } catch (error) {
     res.status(404).json({ message: error.message });
   }
-}
+};
 
 export const getPostsBySearch = async (req, res) => {
   const { searchQuery, tags } = req.query;
@@ -33,7 +33,7 @@ export const getPostsBySearch = async (req, res) => {
   } catch (error) {
     res.status(404).json({ message: error.message });
   }
-}
+};
 
 export const getPostsByCreator = async (req, res) => {
   const { name } = req.query;
@@ -45,7 +45,7 @@ export const getPostsByCreator = async (req, res) => {
   } catch (error) {
     res.status(404).json({ message: error.message });
   }
-}
+};
 
 export const getPost = async (req, res) => {
   const { id } = req.params;
@@ -57,7 +57,7 @@ export const getPost = async (req, res) => {
   } catch (error) {
     res.status(404).json({ message: error.message });
   }
-}
+};
 
 export const createPost = async (req, res) => {
   const post = req.body;
@@ -71,7 +71,7 @@ export const createPost = async (req, res) => {
   } catch (error) {
     res.status(409).json({ message: error.message });
   }
-}
+};
 
 export const updatePost = async (req, res) => {
   const { id } = req.params;
@@ -84,7 +84,7 @@ export const updatePost = async (req, res) => {
   await Post.findByIdAndUpdate(id, updatedPost, { new: true });
 
   res.json(updatedPost);
-}
+};
 
 export const deletePost = async (req, res) => {
   const { id } = req.params;
@@ -94,7 +94,7 @@ export const deletePost = async (req, res) => {
   await Post.findByIdAndRemove(id);
 
   res.json({ message: 'Post deleted successfully.' });
-}
+};
 
 export const likePost = async (req, res) => {
   const { id } = req.params;
@@ -118,7 +118,7 @@ export const likePost = async (req, res) => {
   const updatedPost = await Post.findByIdAndUpdate(id, post, { new: true });
 
   res.status(200).json(updatedPost);
-}
+};
 
 export const comment = async (req, res) => {
   const { id } = req.params;
